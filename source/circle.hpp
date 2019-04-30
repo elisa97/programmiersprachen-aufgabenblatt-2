@@ -4,15 +4,15 @@
 #ifndef CIRCLE_HPP
 #define CIRCLE_HPP
 
-
 class Circle
 {
 private:
-    float circle_radius;
-    Vec2 circle_center;
+    Vec2 center_;
+    float radius_;
 public:
     Circle();
-    Circle(float circle_radius, Vec2 const& circle_center);
+    Circle(float radius_, Vec2 const& center_);
+    float const circumference ();
 };
 
 /*circle::circle(float radius)

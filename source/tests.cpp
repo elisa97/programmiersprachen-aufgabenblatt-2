@@ -391,10 +391,32 @@ REQUIRE (1.4f == Approx(b.b).epsilon(0.1));
 
 TEST_CASE ("describe_Circle" , "[Circle]")
 {
+Vec2 center {0.0f, 1.0f};
+Circle a {4.6f, center};
+Circle b {0.7f, center};
 
+float umfang_a = a.circumference();
+float umfang_b = b.circumference();
 
+REQUIRE (28.9f == Approx(umfang_a).epsilon(0.1));
+REQUIRE (4.4f == Approx(umfang_b).epsilon(0.1));
 }
 
+TEST_CASE ("describe_Rectangle" , "[Rectangle]")
+{
+Vec2 min_a {2.0f, 4.0f};
+Vec2 max_a {5.0f, 9.0f};
+Vec2 min_b {0.0f, 0.0f};
+Vec2 max_b {4.5f, 3.0f};
+Rectangle a {min_a, max_a};
+Rectangle b {min_b, max_b};
+
+float umfang_a = a.circumference();
+float umfang_b = b.circumference();
+
+REQUIRE (16.0f == Approx(umfang_a).epsilon(0.1));
+REQUIRE (15.5f == Approx(umfang_b).epsilon(0.1));
+}
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

@@ -4,9 +4,10 @@
 class Rectangle
 {
 private:
-    Vec2 rectangle_min;
-    Vec2 rectangle_max;
+    Vec2 min_;
+    Vec2 max_;
 public:
   Rectangle();
-  Rectangle(Vec2 const& rectangle_min, Vec2 const& rectangle_max);
+  Rectangle(Vec2 const& min_, Vec2 const& max_);
+  float const circumference ();
 };
