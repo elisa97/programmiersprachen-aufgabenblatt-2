@@ -15,12 +15,12 @@ Vec2& Vec2::operator *=(float s){
     y = y * s;
     return *this;
 }
- Vec2& Vec2::operator /=(float s){
+Vec2& Vec2::operator /=(float s){
     x = x / s;
     y = y / s;
     return *this;
  }
- Vec2 operator + (Vec2 const & u, Vec2 const & v){
+Vec2 operator + (Vec2 const & u, Vec2 const & v){
     Vec2 w = u;
     return w += v;
  }
@@ -42,3 +42,4 @@ Vec2 operator * (float s, Vec2 const & v){
     w.y = s * w.y;
     return w; 
 }
+
