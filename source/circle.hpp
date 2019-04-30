@@ -9,9 +9,10 @@ class Circle
 private:
     Vec2 center_;
     float radius_;
+    Color col_;
 public:
     Circle();
-    Circle(float radius_, Vec2 const& center_);
+    Circle(float radius_, Vec2 const& center_, Color const& col_);
     float const circumference ();
 };
 

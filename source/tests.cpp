@@ -392,8 +392,10 @@ REQUIRE (1.4f == Approx(b.b).epsilon(0.1));
 TEST_CASE ("describe_Circle" , "[Circle]")
 {
 Vec2 center {0.0f, 1.0f};
-Circle a {4.6f, center};
-Circle b {0.7f, center};
+Color col_a {0.4f, 0.6f, 0.3f};
+Color col_b {0.2f, 0.8f, .01f};
+Circle a {4.6f, center, col_a};
+Circle b {0.7f, center, col_b};
 
 float umfang_a = a.circumference();
 float umfang_b = b.circumference();
@@ -408,8 +410,10 @@ Vec2 min_a {2.0f, 4.0f};
 Vec2 max_a {5.0f, 9.0f};
 Vec2 min_b {0.0f, 0.0f};
 Vec2 max_b {4.5f, 3.0f};
-Rectangle a {min_a, max_a};
-Rectangle b {min_b, max_b};
+Color col_a {0.4f, 0.6f, 0.3f};
+Color col_b {0.2f, 0.8f, .01f};
+Rectangle a {min_a, max_a, col_a};
+Rectangle b {min_b, max_b, col_b};
 
 float umfang_a = a.circumference();
 float umfang_b = b.circumference();
