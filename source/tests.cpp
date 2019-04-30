@@ -1,6 +1,8 @@
 #include "vec2.hpp"
 #include "mat2.hpp"
 #include "color.hpp"
+#include "circle.hpp"
+#include "rectangle.hpp"
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
 
@@ -304,7 +306,7 @@ REQUIRE (9.8f == Approx(q.x).epsilon(0.1));
 REQUIRE (10.5f == Approx(q.y).epsilon(0.1));
 }
 
-TEST_CASE ("describe_mat2_det" , "[mat2]")
+TEST_CASE ("describe_mat2_determinante" , "[mat2]")
 {
   Mat2 a {2.3f, 4.3f, 5.4f, 8.1f};
   Mat2 b {3.1f, 2.6f, 1.3f, 9.0f};
@@ -373,10 +375,10 @@ REQUIRE (-0.9f == Approx(rotierte_b.e_10).epsilon(0.1));
 REQUIRE (-0.5f == Approx(rotierte_b.e_11).epsilon(0.1));
 }
 
-TEST_CASE ("describe_color" , "[color]")
+TEST_CASE ("describe_Color" , "[Color]")
 {
-color a {};
-color b {-0.3f, 0.7f, 1.4f};
+Color a {};
+Color b {-0.3f, 0.7f, 1.4f};
 
 REQUIRE (0.5f == Approx(a.r).epsilon(0.1));
 REQUIRE (0.5f == Approx(a.g).epsilon(0.1));
@@ -385,6 +387,12 @@ REQUIRE (0.5f == Approx(a.b).epsilon(0.1));
 REQUIRE (-0.3f == Approx(b.r).epsilon(0.1));
 REQUIRE (0.7f == Approx(b.g).epsilon(0.1));
 REQUIRE (1.4f == Approx(b.b).epsilon(0.1));
+}
+
+TEST_CASE ("describe_Circle" , "[Circle]")
+{
+
+
 }
 
 int main(int argc, char *argv[])

@@ -1,16 +1,28 @@
-class circle
+#include "color.hpp"
+#include "vec2.hpp"
+
+#ifndef CIRCLE_HPP
+#define CIRCLE_HPP
+
+
+class Circle
 {
 private:
-    /* data */
+    float circle_radius;
+    Vec2 circle_center;
 public:
-    circle(/* args */);
-    ~circle();
+    Circle();
+    Circle(float circle_radius, Vec2 const& circle_center);
 };
 
-circle::circle(/* args */)
+/*circle::circle(float radius)
 {
+    circle Kreis = 
 }
 
 circle::~circle()
 {
 }
+*/
+
+#endif

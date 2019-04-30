@@ -1,16 +1,12 @@
-class rectangle
+#include "vec2.hpp"
+#include "color.hpp"
+
+class Rectangle
 {
 private:
-    /* data */
+    Vec2 rectangle_min;
+    Vec2 rectangle_max;
 public:
-    rectangle(/* args */);
-    ~rectangle();
+  Rectangle();
+  Rectangle(Vec2 const& rectangle_min, Vec2 const& rectangle_max);
 };
-
-rectangle::rectangle(/* args */)
-{
-}
-
-rectangle::~rectangle()
-{
-}
