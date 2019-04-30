@@ -1,5 +1,6 @@
 #include "vec2.hpp"
 #include "mat2.hpp"
+#include "color.hpp"
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
 
@@ -370,6 +371,20 @@ REQUIRE (-0.5f == Approx(rotierte_b.e_00).epsilon(0.1));
 REQUIRE (0.9f == Approx(rotierte_b.e_01).epsilon(0.1));
 REQUIRE (-0.9f == Approx(rotierte_b.e_10).epsilon(0.1));
 REQUIRE (-0.5f == Approx(rotierte_b.e_11).epsilon(0.1));
+}
+
+TEST_CASE ("describe_color" , "[color]")
+{
+color a {};
+color b {-0.3f, 0.7f, 1.4f};
+
+REQUIRE (0.5f == Approx(a.r).epsilon(0.1));
+REQUIRE (0.5f == Approx(a.g).epsilon(0.1));
+REQUIRE (0.5f == Approx(a.b).epsilon(0.1));
+
+REQUIRE (-0.3f == Approx(b.r).epsilon(0.1));
+REQUIRE (0.7f == Approx(b.g).epsilon(0.1));
+REQUIRE (1.4f == Approx(b.b).epsilon(0.1));
 }
 
 int main(int argc, char *argv[])
