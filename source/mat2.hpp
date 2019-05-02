@@ -1,6 +1,8 @@
 #include <array>
 #include "vec2.hpp"
 
+#ifndef MAT2_HPP
+#define MAT2_HPP
 struct Mat2 {
 
     float e_00 = 1.0f;
@@ -22,3 +24,4 @@ Mat2 inverse (Mat2 const& m);
 Mat2 transpose (Mat2 const& m);
 Mat2 make_rotation_mat2 (float phi);
 
+#endif

@@ -1,5 +1,8 @@
 #include "rectangle.hpp"
+#include "mat2.hpp"
+#include "vec2.hpp"
 #include <math.h>
+
 
 Rectangle::Rectangle() {
   min_ = Vec2 {0.0f, 0.0f};
@@ -20,3 +23,10 @@ float const Rectangle::circumference (){
   float circum = 2 * (hight + lenght);
   return circum;
 }
+
+void const Rectangle::draw(Window const& win){
+   win.draw_line(min_.x, min_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, 3.0f);
+   win.draw_line(min_.x, min_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, 3.0f);
+   win.draw_line(max_.x, max_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, 3.0f);
+   win.draw_line(max_.x, max_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, 3.0f);
+ }
