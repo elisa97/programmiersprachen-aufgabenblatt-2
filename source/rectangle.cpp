@@ -30,3 +30,10 @@ void const Rectangle::draw(Window const& win){
    win.draw_line(max_.x, max_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, 3.0f);
    win.draw_line(max_.x, max_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, 3.0f);
  }
+
+ void const Rectangle::draw(Window const& win, float thickness){
+   win.draw_line(min_.x, min_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, thickness);
+   win.draw_line(min_.x, min_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, thickness);
+   win.draw_line(max_.x, max_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, thickness);
+   win.draw_line(max_.x, max_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, thickness);
+ }

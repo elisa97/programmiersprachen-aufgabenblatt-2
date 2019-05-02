@@ -17,6 +17,7 @@ public:
     Circle(float radius_, Vec2 const& center_, Color const& col_);
     float const circumference ();
     void const draw(Window const& win);
+    void const draw(Window const& win, float const& thickness);
 };
 
 #endif

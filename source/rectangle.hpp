@@ -14,4 +14,5 @@ public:
   Rectangle(Vec2 const& min_, Vec2 const& max_, Color const& col_);
   float const circumference ();
   void const draw (Window const& win);
+  void const draw(Window const& win, float thickness);
 };

@@ -56,9 +56,9 @@ int main(int argc, char* argv[])
     
     win.draw_text(text_offset_x, text_offset_y, font_size, display_text);
     Circle circ {200.0f, {400.0f, 350.0f}, {0.3f, 0.4f, 2.0f}};
-    circ.draw(win);
+    circ.draw(win, 4.0f);
     Rectangle rec {{260.0f,400.0f},{555.0f,444.0f},{0.1f, 0.3f, 0.9f}};
-    rec.draw(win);
+    rec.draw(win, 7.0f);
     win.update();
   }
 
