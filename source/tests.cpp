@@ -380,13 +380,13 @@ TEST_CASE ("describe_Color" , "[Color]")
 Color a {};
 Color b {-0.3f, 0.7f, 1.4f};
 
-REQUIRE (0.5f == Approx(a.r).epsilon(0.1));
-REQUIRE (0.5f == Approx(a.g).epsilon(0.1));
-REQUIRE (0.5f == Approx(a.b).epsilon(0.1));
+REQUIRE (0.5f == Approx(a.r_).epsilon(0.1));
+REQUIRE (0.5f == Approx(a.g_).epsilon(0.1));
+REQUIRE (0.5f == Approx(a.b_).epsilon(0.1));
 
-REQUIRE (-0.3f == Approx(b.r).epsilon(0.1));
-REQUIRE (0.7f == Approx(b.g).epsilon(0.1));
-REQUIRE (1.4f == Approx(b.b).epsilon(0.1));
+REQUIRE (-0.3f == Approx(b.r_).epsilon(0.1));
+REQUIRE (0.7f == Approx(b.g_).epsilon(0.1));
+REQUIRE (1.4f == Approx(b.b_).epsilon(0.1));
 }
 
 TEST_CASE ("describe_Circle" , "[Circle]")

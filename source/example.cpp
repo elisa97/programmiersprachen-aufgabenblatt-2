@@ -55,10 +55,16 @@ int main(int argc, char* argv[])
     unsigned int font_size = 35;
     
     win.draw_text(text_offset_x, text_offset_y, font_size, display_text);
+
     Circle circ {200.0f, {400.0f, 350.0f}, {0.3f, 0.4f, 2.0f}};
-    circ.draw(win, 4.0f);
+    Circle circ_2 {200.0f, {300.0f, 330.0f}, {0.3f, 0.4f, 2.0f}};
+    circ.draw(win, {0.5f, 0.3f, 0.7f}, 5.0f, false);
+    circ_2.draw(win, {0.5f, 0.3f, 0.7f}, 5.0f, true);
+
     Rectangle rec {{260.0f,400.0f},{555.0f,444.0f},{0.1f, 0.3f, 0.9f}};
-    rec.draw(win, 7.0f);
+    Rectangle rec_2 {{210.0f,390.0f},{540.0f,430.0f},{0.1f, 0.3f, 0.9f}};
+    rec.draw(win, {0.2f, 0.3f, 0.6f}, 4.0f,false);
+    rec_2.draw(win, {0.2f, 0.3f, 0.6f}, 4.0f,true);
     win.update();
   }
 

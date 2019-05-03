@@ -1,6 +1,7 @@
 #include "rectangle.hpp"
 #include "mat2.hpp"
 #include "vec2.hpp"
+#include "color.hpp"
 #include <math.h>
 
 
@@ -31,9 +32,12 @@ void const Rectangle::draw(Window const& win){
    win.draw_line(max_.x, max_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, 3.0f);
  }
 
- void const Rectangle::draw(Window const& win, float thickness){
-   win.draw_line(min_.x, min_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, thickness);
-   win.draw_line(min_.x, min_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, thickness);
-   win.draw_line(max_.x, max_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, thickness);
-   win.draw_line(max_.x, max_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, thickness);
+ void const Rectangle::draw(Window const& win, Color col, float thickness, bool const& highlight_color){
+   if (highlight_color == true){
+            col = {(col.r_ + 0.2f), (col.g_ + 0.2f), (col.b_  + 0.2f)};
+        }
+   win.draw_line(min_.x, min_.y, max_.x, min_.y, col.r_, col.g_, col.b_, thickness);
+   win.draw_line(min_.x, min_.y, min_.x, max_.y, col.r_, col.g_, col.b_, thickness);
+   win.draw_line(max_.x, max_.y, max_.x, min_.y, col.r_, col.g_, col.b_, thickness);
+   win.draw_line(max_.x, max_.y, min_.x, max_.y, col.r_, col.g_, col.b_, thickness);
  }
