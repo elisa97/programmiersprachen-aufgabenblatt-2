@@ -421,6 +421,37 @@ float umfang_b = b.circumference();
 REQUIRE (16.0f == Approx(umfang_a).epsilon(0.1));
 REQUIRE (15.5f == Approx(umfang_b).epsilon(0.1));
 }
+
+TEST_CASE ("describe_Circle_is_inside" , "[Circle]")
+{
+Vec2 center {0.0f, 1.0f};
+Color col {4.0f};
+Circle circ {3.0f, center, col};
+Vec2 point_a {};
+Vec2 point_b {67.0f, 39.1f};
+
+bool a = circ.is_inside(point_a);
+bool b = circ.is_inside(point_b);
+
+REQUIRE (true == a);
+REQUIRE (false == b);
+}
+
+TEST_CASE ("describe_Rectangle_is_inside" , "[Rectangle]")
+{
+Vec2 min {1.0f, 3.0f};
+Vec2 max {4.0f, 9.0f};
+Color col {4.0f};
+Rectangle rec {min, max, col};
+Vec2 point_a {};
+Vec2 point_b {3.0f, 5.0f};
+
+bool a = rec.is_inside(point_a);
+bool b = rec.is_inside(point_b);
+
+REQUIRE (false == a);
+REQUIRE (true == b);
+}
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

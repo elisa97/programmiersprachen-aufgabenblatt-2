@@ -17,7 +17,7 @@ Rectangle::Rectangle (Vec2 const& min, Vec2 const& max, Color const& col){
   col_ = col;
 }
 
-float const Rectangle::circumference (){
+float Rectangle::circumference () const{
   float hight = max_.y - min_.y;
   Vec2 max_left {min_.x, min_.y + hight};
   float lenght = max_.x - max_left.x;
@@ -25,19 +25,27 @@ float const Rectangle::circumference (){
   return circum;
 }
 
-void const Rectangle::draw(Window const& win){
+void Rectangle::draw(Window const& win) const{
    win.draw_line(min_.x, min_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, 3.0f);
    win.draw_line(min_.x, min_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, 3.0f);
    win.draw_line(max_.x, max_.y, max_.x, min_.y, 0.1f, 0.5f, 0.8f, 3.0f);
    win.draw_line(max_.x, max_.y, min_.x, max_.y, 0.1f, 0.5f, 0.8f, 3.0f);
  }
 
- void const Rectangle::draw(Window const& win, Color col, float thickness, bool const& highlight_color){
+ void Rectangle::draw(Window const& win, Color col, float thickness, bool const& highlight_color) const{
    if (highlight_color == true){
-            col = {(col.r_ + 0.2f), (col.g_ + 0.2f), (col.b_  + 0.2f)};
-        }
+        col = {(col.r_ + 0.2f), (col.g_ + 0.2f), (col.b_  + 0.2f)};
+      }
    win.draw_line(min_.x, min_.y, max_.x, min_.y, col.r_, col.g_, col.b_, thickness);
    win.draw_line(min_.x, min_.y, min_.x, max_.y, col.r_, col.g_, col.b_, thickness);
    win.draw_line(max_.x, max_.y, max_.x, min_.y, col.r_, col.g_, col.b_, thickness);
    win.draw_line(max_.x, max_.y, min_.x, max_.y, col.r_, col.g_, col.b_, thickness);
  }
+bool Rectangle::is_inside(Vec2 const& point) const{
+  if (point.x >= min_.x and point.x <= max_.x and point.y >= min_.y and point.y <= max_.y){
+    return true;
+  }
+  else {
+    return false;
+  }
+}

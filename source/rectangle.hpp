@@ -12,7 +12,8 @@ private:
 public:
   Rectangle();
   Rectangle(Vec2 const& min_, Vec2 const& max_, Color const& col_);
-  float const circumference ();
-  void const draw (Window const& win);
-  void const draw(Window const& win, Color col, float thickness, bool const& highlight_color);
+  float circumference () const;
+  void draw (Window const& win) const;
+  void draw(Window const& win, Color col, float thickness, bool const& highlight_color) const;
+  bool is_inside(Vec2 const& point) const;
 };
